@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!-- 新 Bootstrap 核心 CSS 文件 -->
+<link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<!--<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>-->
+ 
+<script language="javascript" type="text/javascript" src="jquery-3.1.1.min.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+	/*function TJ1() {
+	
+		alert("DDLSJ");
+};*/
+
+	
+		
+	/*var name=$("#SCDD tr>td:nth-child(2)").text();*/
+	
+	
+/*var shuzu =new Array();
+	
+	$(document).ready(function(){
+  		shuzu=$("#SCDD tr").find("*").text();
+  		console.log(shuzu);
+});*/
+/*自动读取订单存货明细*/
+function DQ1(){
+
+for (var i = 1;i<6;i++) {
+	
+
+	var scccc =$("#SCDD").find("tr").eq(i).find("td").eq(1).text(); 
+	console.log(scccc);
+
+	$("#SCD").find("tr").eq(i).find("td").eq(1).html(scccc);
+
+
+}
+
+}
+/*
+function TJ1(){
+	for (var j=1;j<6;j++){
+	var sdddd =$("#SCD").find("tr").eq(j).find("td").eq(2).find("input").value();
+	console.log(sdddd); 
+}
+}
+*/
+
+function TJ1(){
+
+	var sdddd =$("#td0").val();
+	console.log(sdddd);
+}
+
+
+
+
+
+</script>
+
+
+<head>生产工序管理</head>
+<div class="container">
+	<div class="row">
+		<div class="span4">
+			<table class="table table-hover table-bordered" id="SCDD">
+				<thead>
+				<h2>订单量</h2>
+					<tr>
+						<th>
+							编号
+						</th>
+						<th>
+							产品
+						</th>
+						<th>
+							数量
+						</th>
+						<th>
+							状态
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+
+					<tr>
+					
+						<td>
+							1
+						</td>
+						<td>
+							钢带
+						</td>
+						<td>
+							10000
+						</td>
+						<td>
+							待产
+						</td>
+					</tr>
+					<tr class="success">
+						<td>
+							2
+						</td>
+						<td>
+							钢条
+						</td>
+						<td>
+							2500
+						</td>
+						<td>
+							待产
+						</td>
+					</tr>
+					<tr class="error">
+						<td>
+							3
+						</td>
+						<td>
+							钢板
+						</td>
+						<td>
+							9000
+						</td>
+						<td>
+							待产
+						</td>
+					</tr>
+					<tr class="warning">
+						<td>
+							4
+						</td>
+						<td>
+							钢架
+						</td>
+						<td>
+							6500
+						</td>
+						<td>
+							待产
+						</td>
+					</tr>
+					<tr class="info">
+						<td>
+							5
+						</td>
+						<td>
+							钢材
+						</td>
+						<td>
+							3520
+						</td>
+						<td>
+							待产
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			
+		</div>
+		<div class="span4">
+			<table class="table table-bordered table-hover" id="SCD">
+				<thead>
+				<h2>生产量</h2>
+					<tr>
+						<th>
+							编号
+						</th>
+						<th>
+							产品
+						</th>
+						<th>
+							交付量
+						</th>
+						<th>
+							状态
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							1
+						</td>
+						<td>
+							钢带
+						</td>
+						<td>
+							<input type="text" name="JFL" id="td0" style="border-style:none;width:100%;height:100%;outline:medium;">
+						</td>
+						<td>
+							
+						</td>
+					</tr>
+					<tr class="success">
+						<td>
+							2
+						</td>
+						<td>
+							TB - Monthly
+						</td>
+						<td>
+							<input type="text" name="JFL" id="td1" style="border-style:none;width:100%;height:100%;outline:medium;">
+						</td>
+						<td>
+							Approved
+						</td>
+					</tr>
+					<tr class="error">
+						<td>
+							3
+						</td>
+						<td>
+							TB - Monthly
+						</td>
+						<td>
+							<input type="text" name="JFL" id="td2" style="border-style:none;width:100%;height:100%;outline:medium;">
+						</td>
+						<td>
+							Declined
+						</td>
+					</tr>
+					<tr class="warning">
+						<td>
+							4
+						</td>
+						<td>
+							TB - Monthly
+						</td>
+						<td>
+							<input type="text" name="JFL" id="td3" style="border-style:none;width:100%;height:100%;outline:medium;">
+						</td>
+						<td>
+							Pending
+						</td>
+					</tr>
+					<tr class="info">
+						<td>
+							5
+						</td>
+						<td>
+							TB - Monthly
+						</td>
+						<td>
+							<input type="text" name="JFL" id="td4" style="border-style:none;width:100%;height:100%;outline:medium;">
+						</td>
+						<td>
+							Call in to confirm
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<input type="submit" value="提交" onclick="TJ1()" > 
+			<input type="submit" value="读取" onclick="DQ1()" > 
+		</div>
+		<div class="span4">
+			<table class="table table-bordered table-hover" id="SYL">
+				<thead>
+				<h2>剩余量</h2>
+					<tr>
+						<th>
+							编号
+						</th>
+						<th>
+							产品
+						</th>
+						<th>
+							交付时间
+						</th>
+						<th>
+							状态
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							1
+						</td>
+						<td>
+							TB - Monthly
+						</td>
+						<td>
+							01/04/2012
+						</td>
+						<td>
+							Default
+						</td>
+					</tr>
+					<tr class="success">
+						<td>
+							1
+						</td>
+						<td>
+							TB - Monthly
+						</td>
+						<td>
+							01/04/2012
+						</td>
+						<td>
+							Approved
+						</td>
+					</tr>
+					<tr class="error">
+						<td>
+							2
+						</td>
+						<td>
+							TB - Monthly
+						</td>
+						<td>
+							02/04/2012
+						</td>
+						<td>
+							Declined
+						</td>
+					</tr>
+					<tr class="warning">
+						<td>
+							3
+						</td>
+						<td>
+							TB - Monthly
+						</td>
+						<td>
+							03/04/2012
+						</td>
+						<td>
+							Pending
+						</td>
+					</tr>
+					<tr class="info">
+						<td>
+							4
+						</td>
+						<td>
+							TB - Monthly
+						</td>
+						<td>
+							04/04/2012
+						</td>
+						<td>
+							Call in to confirm
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+</body>
+</html>
